@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>درس التدفقات المالية في العالم | الأستاذ رياض السليمي - 4 آداب</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts: Cairo & Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            700: '#075985',
+                            800: '#0c4a6e',
+                            900: '#082f49',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        emerald: {
+                            600: '#059669',
+                            700: '#047857',
+                        }
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        tajawal: ['Tajawal', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Cairo', sans-serif;
+        }
+        .flow-line {
+            stroke-dasharray: 8;
+            animation: dash 30s linear infinite;
+        }
+        @keyframes dash {
+            to {
+                stroke-dashoffset: -1000;
+            }
+        }
+        .pulse-node {
+            animation: pulse-ring 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); opacity: 0.9; }
+            50% { transform: scale(1.15); opacity: 0.4; }
+            100% { transform: scale(0.95); opacity: 0.9; }
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #0284c7;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .gradient-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 249, 255, 0.85) 100%);
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 leading-relaxed custom-scrollbar">
+
+    <!-- Top Official Banner -->
+    <div class="bg-brand-900 text-slate-200 text-xs py-2 px-4 border-b border-brand-800">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center gap-3">
+                <span class="inline-flex items-center bg-red-600/80 text-white px-2 py-0.5 rounded text-[11px] font-bold">
+                    <i class="fa-solid fa-flag-checkered ml-1"></i> الجمهورية التونسية
+                </span>
+                <span>وزارة التربية | برامج الجغرافيا - السنة الرابعة من التعليم الثانوي (شعبة الآداب)</span>
+            </div>
+            <div class="flex items-center gap-4 text-slate-300">
+                <span><i class="fa-regular fa-calendar-days text-gold-400 ml-1"></i> السنة الدراسية: 2026 / 2027</span>
+                <span class="hidden md:inline">|</span>
+                <span class="text-gold-400 font-bold"><i class="fa-solid fa-chalkboard-user ml-1"></i> إعداد الأستاذ: رياض السليمي</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur shadow-sm border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-gradient-to-tr from-brand-700 to-brand-500 rounded-2xl flex items-center justify-center text-white text-2xl shadow-md shadow-brand-500/20">
+                        <i class="fa-solid fa-money-bill-transfer"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-heading font-extrabold text-xl sm:text-2xl text-brand-900 tracking-tight leading-tight">التدفقات المالية في العالم</h1>
+                        <p class="text-xs text-brand-600 font-semibold">المجال العالمي وتنظيم التدفقات النقدية والاستثمارية</p>
+                    </div>
+                </div>
+
+                <nav class="hidden lg:flex items-center gap-1 font-semibold text-sm text-slate-600">
+                    <a href="#objectives" class="px-3 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition">الأهداف</a>
+                    <a href="#problem" class="px-3 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition">الإشكالية</a>
+                    <a href="#concepts" class="px-3 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition">المفاهيم</a>
+                    <a href="#section1" class="px-3 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition">التدفقات المالية</a>
+                    <a href="#section2" class="px-3 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition">الأطراف والمراكز</a>
+                    <a href="#map-section" class="px-3 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition">الخريطة التفاعلية</a>
+                    <a href="#charts-section" class="px-3 py-2 rounded-lg hover:text-brand-600 hover:bg-brand-50 transition">الرسوم البيانية</a>
+                    <a href="#quiz" class="px-3 py-2 rounded-lg bg-gold-500 text-brand-950 font-bold hover:bg-gold-400 transition ml-2 shadow-sm">
+                        <i class="fa-solid fa-graduation-cap ml-1"></i> اختبر معلوماتك
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="lg:hidden text-slate-700 hover:text-brand-600 text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile dropdown -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 py-3 space-y-2 text-sm font-semibold">
+            <a href="#objectives" class="block py-2 text-slate-700 hover:text-brand-600">الأهداف البيداغوجية</a>
+            <a href="#problem" class="block py-2 text-slate-700 hover:text-brand-600">المقدمة والإشكالية</a>
+            <a href="#concepts" class="block py-2 text-slate-700 hover:text-brand-600">المفاهيم والمصطلحات</a>
+            <a href="#section1" class="block py-2 text-slate-700 hover:text-brand-600">العنصر 1: التدفقات المالية العالمية</a>
+            <a href="#section2" class="block py-2 text-slate-700 hover:text-brand-600">العنصر 2: الأطراف الفاعلة والمراكز المتحكمة</a>
+            <a href="#map-section" class="block py-2 text-slate-700 hover:text-brand-600">الخريطة التفاعلية</a>
+            <a href="#charts-section" class="block py-2 text-slate-700 hover:text-brand-600">الرسوم البيانية</a>
+            <a href="#quiz" class="block py-2 text-brand-700 font-bold">اختبر معلوماتك</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-b from-brand-900 via-brand-800 to-slate-900 text-white py-16 lg:py-24 overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-8 space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-brand-700/60 border border-brand-500/40 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-brand-200">
+                        <i class="fa-solid fa-book-atlas text-gold-400"></i> مادة الجغرافيا • المحور الأول: المجال العالمي وتنظيم التدفقات
+                    </div>
+                    <h1 class="font-heading text-3xl sm:text-5xl font-extrabold leading-tight tracking-tight text-white">
+                        التدفقات المالية في العالم
+                        <span class="block text-xl sm:text-2xl font-medium text-brand-200 mt-2">أنواعها، مظاهر نموها، عوامل انفجارها والأطراف والمراكز المتحكمة فيها</span>
+                    </h1>
+                    <p class="text-slate-300 text-base sm:text-lg max-w-3xl leading-relaxed">
+                        دعامة بيداغوجية رقمية تفاعلية شاملة مصممة خصيصاً لتلاميذ السنة الرابعة آداب بالمعاهد الثانوية التونسية، تهدف إلى إبراز هيمنة الاقتصاد المالي والعولمة المالية ومظاهر التفاوت المجالي الحاد بين الشمال والجنوب.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#section1" class="bg-brand-500 hover:bg-brand-600 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-brand-500/30 transition flex items-center gap-2">
+                            <span>تصفح محتوى الدرس</span>
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </a>
+                        <a href="#map-section" class="bg-slate-800/80 hover:bg-slate-800 border border-slate-600 text-slate-100 font-bold px-6 py-3.5 rounded-xl transition flex items-center gap-2">
+                            <i class="fa-solid fa-earth-americas text-brand-400"></i>
+                            <span>الخريطة الجغرافية للتدفقات</span>
+                        </a>
+                        <button onclick="window.print()" class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-4 py-3.5 rounded-xl transition">
+                            <i class="fa-solid fa-print"></i>
+                        </button>
+                    </div>
+
+                    <!-- Quick stats pills -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-brand-700/60">
+                        <div class="bg-brand-800/50 p-3 rounded-lg border border-brand-700/50">
+                            <div class="text-2xl font-black text-gold-400 font-heading">+41,000</div>
+                            <div class="text-xs text-slate-300">مليار $ رصيد الاستثمار الأجنبي المباشر</div>
+                        </div>
+                        <div class="bg-brand-800/50 p-3 rounded-lg border border-brand-700/50">
+                            <div class="text-2xl font-black text-sky-400 font-heading">26 %</div>
+                            <div class="text-xs text-slate-300">نسبة رصيد IDE من الناتج الداخلي الخام</div>
+                        </div>
+                        <div class="bg-brand-800/50 p-3 rounded-lg border border-brand-700/50">
+                            <div class="text-2xl font-black text-emerald-400 font-heading">+75 %</div>
+                            <div class="text-xs text-slate-300">حصة دول الثالوث من التدفقات العالمية</div>
+                        </div>
+                        <div class="bg-brand-800/50 p-3 rounded-lg border border-brand-700/50">
+                            <div class="text-2xl font-black text-rose-400 font-heading">&lt; 1 %</div>
+                            <div class="text-xs text-slate-300">حصة القارة الإفريقية (التهميش المالي)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher Card Sidebar -->
+                <div class="lg:col-span-4">
+                    <div class="bg-gradient-to-br from-white/10 to-white/5 border border-white/20 rounded-3xl p-6 sm:p-8 backdrop-blur-md shadow-2xl relative">
+                        <div class="absolute -top-3 -right-3 bg-gold-500 text-brand-950 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+                            الموسم 2026/2027
+                        </div>
+                        <div class="text-center space-y-4">
+                            <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-gold-500 to-amber-300 flex items-center justify-center text-brand-950 text-4xl font-extrabold shadow-inner border-4 border-white/30">
+                                <i class="fa-solid fa-user-tie"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white font-heading">الأستاذ رياض السليمي</h3>
+                                <p class="text-brand-300 text-sm font-medium">أستاذ مميز لمادتي التاريخ والجغرافيا</p>
+                                <p class="text-slate-400 text-xs mt-1">المعاهد الثانوية - الجمهورية التونسية</p>
+                            </div>
+                            <hr class="border-white/10">
+                            <div class="text-right space-y-2 text-xs text-slate-300">
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-graduation-cap text-gold-400 w-4"></i> المستوى: الرابعة ثانوي آداب (Bac Lettres)</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-book text-sky-400 w-4"></i> المرجع: منهاج الجغرافيا الرسمي التونسي</div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-chart-line text-emerald-400 w-4"></i> المحور: تدفقات رؤوس الأموال والاستثمارات</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Pedagogical Objectives -->
+    <section id="objectives" class="py-16 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-600 font-bold text-sm uppercase tracking-wider bg-brand-50 px-3 py-1 rounded-full border border-brand-200">
+                    <i class="fa-solid fa-bullseye ml-1"></i> المخرجات التعليمية
+                </span>
+                <h2 class="font-heading text-3xl font-bold text-brand-900 mt-3">الأهداف البيداغوجية للدرس</h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-2">وفقاً للمنهاج التونسي الرسمي المحدد لتوجيهات مادة الجغرافيا للرابعة آداب</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Cognitive Objectives -->
+                <div class="gradient-card rounded-2xl p-6 border border-sky-100 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-sky-500 text-white rounded-xl flex items-center justify-center text-xl mb-5 shadow-md shadow-sky-500/20">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 font-heading mb-3 border-b border-sky-100 pb-2 flex items-center justify-between">
+                        <span>أهداف معرفية (Cognitive)</span>
+                        <span class="text-xs bg-sky-100 text-sky-800 px-2 py-0.5 rounded">المعارف الأساسية</span>
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-sky-500 mt-1"></i>
+                            <span>التعرف على أصناف التدفقات المالية العالمية (IDE، الاستثمارات غير المباشرة، القروض، تحويلات المهاجرين، المساعدة العمومية).</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-sky-500 mt-1"></i>
+                            <span>إدراك مظاهر الانفجار المالي وهيمنة الاقتصاد الافتراضي المضاربي على الاقتصاد الحقيقي.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-sky-500 mt-1"></i>
+                            <span>تحديد الأطراف الفاعلة (الشركات عبر القطرية، البنوك، المؤسسات المالية الدولية كصندوق النقد والبنك الدوليين).</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-sky-500 mt-1"></i>
+                            <span>تبين مظاهر التباين المجالي: هيمنة الثالوث، صعود أقطاب الجنوب (الصين)، وتهميش القارة الإفريقية.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Skill-based Objectives -->
+                <div class="gradient-card rounded-2xl p-6 border border-amber-100 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-amber-500 text-white rounded-xl flex items-center justify-center text-xl mb-5 shadow-md shadow-amber-500/20">
+                        <i class="fa-solid fa-compass-drafting"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 font-heading mb-3 border-b border-amber-100 pb-2 flex items-center justify-between">
+                        <span>أهداف مهارية (Skill-based)</span>
+                        <span class="text-xs bg-amber-100 text-amber-800 px-2 py-0.5 rounded">المنهجية والأدوات</span>
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-amber-500 mt-1"></i>
+                            <span>قراءة وتفكيك وتفسير الجداول والرسوم البيانية المعبرة عن تطور وتوزيع التدفقات المالية.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-amber-500 mt-1"></i>
+                            <span>توطين المراكز المالية والبورصات العالمية وتحديد اتجاهات مسالك السيولة عبر الخرائط الجغرافية.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-amber-500 mt-1"></i>
+                            <span>المقارنة النقدية بين حجم الاقتصاد الحقيقي والتدفقات المضاربية اللامادية.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-amber-500 mt-1"></i>
+                            <span>القدرة على تحرير مقال جغرافي متكامل أو تحليل وثائق حول العولمة المالية.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Behavioral & Value Objectives -->
+                <div class="gradient-card rounded-2xl p-6 border border-emerald-100 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-emerald-600 text-white rounded-xl flex items-center justify-center text-xl mb-5 shadow-md shadow-emerald-600/20">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 font-heading mb-3 border-b border-emerald-100 pb-2 flex items-center justify-between">
+                        <span>أهداف سلوكية وقيمية (Behavioral)</span>
+                        <span class="text-xs bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">المواقف النقدية</span>
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-600 mt-1"></i>
+                            <span>تنمية الوعي النقدي بمخاطر التبعية المالية والمديونية المشطة على سيادة بلدان الجنوب.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-600 mt-1"></i>
+                            <span>إدراك خطورة الأزمات المالية العالمية وهشاشة الاقتصاد المبني على المضاربات السريعة.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-600 mt-1"></i>
+                            <span>تثمين الدور التنموي لتحويلات المغتربين في الاقتصاد الوطني التونسي واقتصادات بلدان الجنوب.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-600 mt-1"></i>
+                            <span>المطالبة بنظام مالي دولي أكثر عدالة وإنصافاً للقارة الإفريقية والبلدان النامية.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Introduction & Problem Statement -->
+    <section id="problem" class="py-16 bg-slate-100/70">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl shadow-sm border border-slate-200 p-8 sm:p-12 relative overflow-hidden">
+                <div class="absolute -left-12 -bottom-12 w-48 h-48 bg-brand-50 rounded-full pointer-events-none"></div>
+                <div class="relative z-10 space-y-6">
+                    <div class="inline-flex items-center gap-2 text-brand-700 bg-brand-50 px-3 py-1 rounded-full text-xs font-bold">
+                        <i class="fa-solid fa-circle-question"></i> التأطير النظري والإشكالي
+                    </div>
+                    
+                    <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-brand-950">المقدمة والإشكالية الجغرافية</h2>
+                    
+                    <div class="text-slate-700 text-base leading-relaxed space-y-4 text-justify">
+                        <p>
+                            شهد المجال العالمي منذ نهاية القرن العشرين طفرة غير مسبوقة في تنقلات رؤوس الأموال، جعلت من <strong>التدفقات المالية</strong> عصب العولمة المعاصرة والمحرك الأساسي للتبادلات الدولية، حتى باتت السيولة النقدية المتداولة يومياً تفوق بكثير قيمة المبادلات السلعية والتجارية الحقيقية.
+                        </p>
+                        <p>
+                            وقد أسهم تحرير حركة رؤوس الأموال وثورة تكنولوجيات الاتصال في تحويل كوكب الأرض إلى فضاء مالي موحد يعمل على مدار الساعة. غير أن هذا الانفجار المالي لا يعكس توزيعاً عادلاً للثروة، بل يكرس تركزاً جغرافياً شديداً في بلدان الشمال ومراكزه المالية الكبرى، في مقابل صعود قوى ناشئة جديدة ومواصلة تهميش بلدان الجنوب وخاصة القارة الإفريقية.
+                        </p>
+                    </div>
+
+                    <!-- Problematic Box -->
+                    <div class="bg-gradient-to-r from-brand-900 to-brand-800 text-white p-6 rounded-2xl shadow-inner mt-6">
+                        <h4 class="text-gold-400 font-bold font-heading text-base mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-fire"></i> إشكالية الدرس (الأسئلة الجوهرية):
+                        </h4>
+                        <ol class="space-y-2.5 text-sm sm:text-base text-slate-100 list-decimal list-inside font-medium leading-relaxed">
+                            <li><span class="text-gold-200 font-bold">فما هي مختلف أصناف التدفقات المالية العالمية وما مظاهر وعوامل نموها المتسارع؟</span></li>
+                            <li><span class="text-gold-200 font-bold">ومن هي الأطراف المتدخلة والفاعلة في تنشيط وإدارة هذه التدفقات؟</span></li>
+                            <li><span class="text-gold-200 font-bold">وكيف يبرز التباين المجالي الحاد بين المراكز المالية المتحكمة في العالم والمجالات المهمشة؟</span></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Core Concepts Glossary -->
+    <section id="concepts" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-600 font-bold text-sm bg-brand-50 px-3 py-1 rounded-full border border-brand-200">
+                    <i class="fa-solid fa-spell-check ml-1"></i> رصيد المصطلحات
+                </span>
+                <h2 class="font-heading text-3xl font-bold text-brand-900 mt-3">المفاهيم والمصطلحات الأساسية للدرس</h2>
+                <p class="text-slate-600 text-sm mt-1">مصطلحات جغرافية واقتصادية أساسية للامتحان الوطني للباكالوريا</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Concept 1 -->
+                <div class="p-5 rounded-2xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:shadow-lg hover:border-brand-300 transition group">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="font-heading font-bold text-brand-900 text-base group-hover:text-brand-600">الاستثمار الأجنبي المباشر (FDI / IDE)</h3>
+                        <span class="text-xs bg-brand-100 text-brand-800 font-bold px-2 py-0.5 rounded">استثمار حقيقي</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        رؤوس أموال توظفها الشركات أو الأفراد في بلد أجنبي لإنشاء وحدات إنتاجية جديدة، أو شراء شركات قائمة والمساهمة في رأسمالها بنسبة (غالباً 10% فأكثر) تتيح المراقبة والإدارة وتحقيق أرباح مستدامة.
+                    </p>
+                </div>
+
+                <!-- Concept 2 -->
+                <div class="p-5 rounded-2xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:shadow-lg hover:border-brand-300 transition group">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="font-heading font-bold text-brand-900 text-base group-hover:text-brand-600">الاستثمارات غير المباشرة (المحافظ المالية)</h3>
+                        <span class="text-xs bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded">مضاربات بورصية</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        توظيف الأموال في شراء الأسهم والسندات في الأسواق المالية العالمية والقروض قصيرة/متوسطة المدى دون استهداف إدارة الشركات، بهدف جني أرباح سريعة عبر المضاربة وتقلبات الأسعار.
+                    </p>
+                </div>
+
+                <!-- Concept 3 -->
+                <div class="p-5 rounded-2xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:shadow-lg hover:border-brand-300 transition group">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="font-heading font-bold text-brand-900 text-base group-hover:text-brand-600">المساعدة العمومية من أجل التنمية (APD)</h3>
+                        <span class="text-xs bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded">تمويل تفاضلي</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        هبات أو قروض ميسرة ذات فوائد منخفضة وفترات سداد مريحة تقدمها الدول المتقدمة أو المنظمات الأممية لدعم البنية التحتية والقطاعات الاجتماعية في بلدان الجنوب النامية.
+                    </p>
+                </div>
+
+                <!-- Concept 4 -->
+                <div class="p-5 rounded-2xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:shadow-lg hover:border-brand-300 transition group">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="font-heading font-bold text-brand-900 text-base group-hover:text-brand-600">مؤسسات بريتون وودز (Bretton Woods)</h3>
+                        <span class="text-xs bg-indigo-100 text-indigo-800 font-bold px-2 py-0.5 rounded">صندوق النقد والبنك الدولي</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        المؤسسات المالية التي أنشئت سنة 1944 لضبط النظام النقدي العالمي، وتشمل صندوق النقد الدولي (FMI) والبنك العالمي (BM)، وتختص بمنح القروض المشروطة بالإصلاحات الهيكلية.
+                    </p>
+                </div>
+
+                <!-- Concept 5 -->
+                <div class="p-5 rounded-2xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:shadow-lg hover:border-brand-300 transition group">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="font-heading font-bold text-brand-900 text-base group-hover:text-brand-600">نادي باريس (Club de Paris)</h3>
+                        <span class="text-xs bg-purple-100 text-purple-800 font-bold px-2 py-0.5 rounded">نادي الدائنين الكبار</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        تجمع غير رسمي للدول الدائنة الكبرى في العالم (معظمها دول صناعية متقدمة) يجتمع في باريس لإعادة جدولة أو تخفيف ديون الدول المدينة العاجزة عن السداد وفق شروط محددة.
+                    </p>
+                </div>
+
+                <!-- Concept 6 -->
+                <div class="p-5 rounded-2xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:shadow-lg hover:border-brand-300 transition group">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="font-heading font-bold text-brand-900 text-base group-hover:text-brand-600">الصناديق السيادية وصناديق التقاعد</h3>
+                        <span class="text-xs bg-rose-100 text-rose-800 font-bold px-2 py-0.5 rounded">كتل مالية عملاقة</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        صناديق استثمارية ضخمة تملكها الدول (مثل صناديق دول الخليج والنرويج والصين) أو صناديق تدير مدخرات تقاعد العمال والموظفين، تدير تريليونات الدولارات وتبحث عن استثمارات عالمية رابحة.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: GLOBAL FINANCIAL FLOWS -->
+    <section id="section1" class="py-16 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Title Header -->
+            <div class="border-r-4 border-brand-600 pr-4 mb-12">
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-600">العنصر الأول في البرنامج</span>
+                <h2 class="font-heading text-2xl sm:text-4xl font-extrabold text-brand-950">1. التدفقات المالية العالمية: أصنافها، مظاهر نموها وعواملها</h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-1">دراسة معمقة في طبيعة تدفقات الأموال والتحولات البنيوية للاقتصاد العالمي المعاصر</p>
+            </div>
+
+            <!-- Subsection 1.1: Types of Financial Flows -->
+            <div class="space-y-6 mb-16">
+                <h3 class="font-heading text-xl font-bold text-brand-900 flex items-center gap-2">
+                    <span class="w-8 h-8 rounded-lg bg-brand-600 text-white flex items-center justify-center text-sm font-bold">1.1</span>
+                    أصناف وأنواع التدفقات المالية في العالم
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Type 1 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border-t-4 border-t-blue-600 border border-slate-200 hover:-translate-y-1 transition duration-200">
+                        <div class="text-blue-600 text-3xl mb-3"><i class="fa-solid fa-industry"></i></div>
+                        <h4 class="font-heading font-bold text-slate-900 text-lg mb-2">1. الاستثمار الأجنبي المباشر (FDI / IDE)</h4>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                            يمثل المحرك الرئيسي للعولمة الإنتاجية. يتجسد في:
+                        </p>
+                        <ul class="text-xs sm:text-sm text-slate-700 space-y-2 bg-blue-50/50 p-3 rounded-xl border border-blue-100">
+                            <li><i class="fa-solid fa-angle-left text-blue-500 ml-1"></i> بعث وإحداث وحدات ومصانع إنتاجية جديدة بالخارج (Greenfield investments).</li>
+                            <li><i class="fa-solid fa-angle-left text-blue-500 ml-1"></i> شراء مؤسسات وطنية أو الاندماج والمساهمة في رأس المال بهدف الإدارة والمراقبة الدائمة.</li>
+                            <li><i class="fa-solid fa-angle-left text-blue-500 ml-1"></i> استراتيجية طويلة المدى تستهدف تحقيق أرباح مستقرة واستغلال مزايا التوطن.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Type 2 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border-t-4 border-t-amber-500 border border-slate-200 hover:-translate-y-1 transition duration-200">
+                        <div class="text-amber-500 text-3xl mb-3"><i class="fa-solid fa-chart-line"></i></div>
+                        <h4 class="font-heading font-bold text-slate-900 text-lg mb-2">2. الاستثمارات غير المباشرة (المالية والمحافظ)</h4>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                            رؤوس أموال متحركة ذات طابع افتراضي ومضاربي بحت، تشمل:
+                        </p>
+                        <ul class="text-xs sm:text-sm text-slate-700 space-y-2 bg-amber-50/50 p-3 rounded-xl border border-amber-100">
+                            <li><i class="fa-solid fa-angle-left text-amber-500 ml-1"></i> شراء الأسهم والسندات والأوراق المالية في البورصات العالمية.</li>
+                            <li><i class="fa-solid fa-angle-left text-amber-500 ml-1"></i> قروض قصيرة ومتوسطة المدى لا تستهدف إدارة الشركات بل تحقيق أرباح ناتجة عن الفوارق السعرية.</li>
+                            <li><i class="fa-solid fa-angle-left text-amber-500 ml-1"></i> شديدة الحركية وسريعة الهروب (الأموال الساخنة) مما يغذي الأزمات والفقاعات المالية.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Type 3 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border-t-4 border-t-rose-600 border border-slate-200 hover:-translate-y-1 transition duration-200">
+                        <div class="text-rose-600 text-3xl mb-3"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                        <h4 class="font-heading font-bold text-slate-900 text-lg mb-2">3. تدفقات القروض والمديونية</h4>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                            تمويلات واستدانات خارجية تمنحها أطراف دولية متعددة:
+                        </p>
+                        <ul class="text-xs sm:text-sm text-slate-700 space-y-2 bg-rose-50/50 p-3 rounded-xl border border-rose-100">
+                            <li><i class="fa-solid fa-angle-left text-rose-500 ml-1"></i> قروض من المؤسسات النقدية الدولية (صندوق النقد والبنك الدوليين) لمعالجة عجز الموازنة.</li>
+                            <li><i class="fa-solid fa-angle-left text-rose-500 ml-1"></i> قروض تجارية مصرفية من البنوك الكبرى أو الدائنين الثنائيين (نادي باريس ونادي لندن).</li>
+                            <li><i class="fa-solid fa-angle-left text-rose-500 ml-1"></i> تشكل عبئاً خانقاً على ميزانيات دول الجنوب وخدمة الدين الخارجي.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Type 4 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border-t-4 border-t-emerald-600 border border-slate-200 hover:-translate-y-1 transition duration-200">
+                        <div class="text-emerald-600 text-3xl mb-3"><i class="fa-solid fa-person-walking-luggage"></i></div>
+                        <h4 class="font-heading font-bold text-slate-900 text-lg mb-2">4. تحويلات المهاجرين والعمال بالخارج</h4>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                            الأموال التي يرسلها المهاجرون والعمال في المهجر إلى بلدانهم الأصلية:
+                        </p>
+                        <ul class="text-xs sm:text-sm text-slate-700 space-y-2 bg-emerald-50/50 p-3 rounded-xl border border-emerald-100">
+                            <li><i class="fa-solid fa-angle-left text-emerald-500 ml-1"></i> مورد مالي قار ومستمر يدعم ميزان المدفوعات واحتياطات العملة الصعبة.</li>
+                            <li><i class="fa-solid fa-angle-left text-emerald-500 ml-1"></i> تفوق قيمتها في العديد من دول الجنوب (مثل مصر، تونس، المغرب، المكسيك) حجم المساعدات الرسمية.</li>
+                            <li><i class="fa-solid fa-angle-left text-emerald-500 ml-1"></i> تدعم القدرة الشرائية للعائلات وتحفز الاستهلاك والتشييد العقاري.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Type 5 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border-t-4 border-t-indigo-600 border border-slate-200 hover:-translate-y-1 transition duration-200 md:col-span-2 lg:col-span-2">
+                        <div class="text-indigo-600 text-3xl mb-3"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                        <h4 class="font-heading font-bold text-slate-900 text-lg mb-2">5. المساعدة العمومية من أجل التنمية (APD)</h4>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                            تمويلات تفاضلية، هبات وإعانات ميسرة تقدمها الدول المتقدمة أو الهياكل الأممية:
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <ul class="text-xs sm:text-sm text-slate-700 space-y-2 bg-indigo-50/50 p-3 rounded-xl border border-indigo-100">
+                                <li><i class="fa-solid fa-angle-left text-indigo-500 ml-1"></i> موجهة لدعم المشاريع الاجتماعية والصحية، والتعليم، ومقاومة الفقر، والبنى التحتية الأساسية.</li>
+                                <li><i class="fa-solid fa-angle-left text-indigo-500 ml-1"></i> قروض ذات نسب فائدة ضعيفة جداً مع فترات سماح طويلة في السداد.</li>
+                            </ul>
+                            <ul class="text-xs sm:text-sm text-slate-700 space-y-2 bg-indigo-50/50 p-3 rounded-xl border border-indigo-100">
+                                <li><i class="fa-solid fa-angle-left text-indigo-500 ml-1"></i> تظل ما دون الالتزام الدولي المحدد من قبل منظمة الأمم المتحدة (0.7% من الدخل القومي الخام للدول الغنية).</li>
+                                <li><i class="fa-solid fa-angle-left text-indigo-500 ml-1"></i> غالباً ما ترتبط بأجندات جيوسياسية وشروط اقتصادية مقيدة للبلدان المتلقية.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subsection 1.2: Manifestations of Growth -->
+            <div class="space-y-6 mb-16">
+                <h3 class="font-heading text-xl font-bold text-brand-900 flex items-center gap-2">
+                    <span class="w-8 h-8 rounded-lg bg-brand-600 text-white flex items-center justify-center text-sm font-bold">1.2</span>
+                    مظاهر نمو التدفقات المالية في العالم
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm relative overflow-hidden">
+                        <div class="text-4xl font-black text-brand-600 mb-2 font-heading">+41,000 $</div>
+                        <h4 class="font-bold text-slate-800 text-sm mb-2">النمو الفلكي لقيمة التدفقات</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            تضاعفت التدفقات المالية العالمية بأنساق خارقة تجاوزت بكثير وتيرة نمو التجارة العالمية والناتج العالمي الخام، حيث تجاوز رصيد الاستثمارات الأجنبية المباشرة حاجز <strong>41 تريليون دولار</strong>.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm relative overflow-hidden">
+                        <div class="text-4xl font-black text-sky-600 mb-2 font-heading">26%</div>
+                        <h4 class="font-bold text-slate-800 text-sm mb-2">ارتفاع نسبة التدفقات في PIB</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            ارتفعت حصة رصيد الاستثمار الأجنبي المباشر من نحو <strong>9%</strong> فقط من الناتج الداخلي الخام العالمي في مطلع التسعينات إلى قرابة <strong>26%</strong> حالياً، كدليل ساطع على هيمنة الاقتصاد المالي على الاقتصاد الحقيقي.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm relative overflow-hidden">
+                        <div class="text-4xl font-black text-gold-500 mb-2 font-heading">مئات الأضعاف</div>
+                        <h4 class="font-bold text-slate-800 text-sm mb-2">تضخم المعاملات البورصية الافتراضية</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            تجاوز حجم المبادلات المالية اليومية في أسواق الصرف والبورصات (أكثر من 6.6 تريليون دولار يومياً في سوق الفوركس وحدها) مئات أضعاف القيمة الفعلية للتجارة السلعية الحقيقية.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm relative overflow-hidden">
+                        <div class="text-4xl font-black text-emerald-600 mb-2 font-heading">توسع الرقعة</div>
+                        <h4 class="font-bold text-slate-800 text-sm mb-2">اتساع مجالات الجذب والإصدار</h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            تزايدت أهمية التدفقات المتجهة نحو الأسواق الناشئة والبلدان النامية، مع تنامي دور دول الجنوب (خاصة الصين والبلدان الآسيوية وصناديق الخليج) كمصدر رئيسي للاستثمارات نحو العالم.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subsection 1.3: Factors driving growth -->
+            <div class="space-y-6">
+                <h3 class="font-heading text-xl font-bold text-brand-900 flex items-center gap-2">
+                    <span class="w-8 h-8 rounded-lg bg-brand-600 text-white flex items-center justify-center text-sm font-bold">1.3</span>
+                    عوامل نمو التدفقات المالية العالمية وانفجارها
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gradient-to-br from-white to-sky-50/50 p-6 rounded-2xl border border-sky-200/80 shadow-sm flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-sky-600 text-white flex items-center justify-center text-xl shrink-0 shadow-md shadow-sky-600/20">
+                            <i class="fa-solid fa-scale-unbalanced"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-bold text-slate-900 text-base mb-1">1. التحرير المالي والتشريعي</h4>
+                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                                إلغاء القيود الصرفية والتشريعية، وإزالة الحواجز الجمركية والضريبية أمام حركة رؤوس الأموال عبر الدول، وتطبيق برامج التحرير المالي والهيكلي التي قادتها الدول الرأسمالية والمنظمات المالية منذ أواخر القرن العشرين، وفتح البورصات الوطنية أمام المستثمرين الأجانب.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-white to-amber-50/50 p-6 rounded-2xl border border-amber-200/80 shadow-sm flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500 text-white flex items-center justify-center text-xl shrink-0 shadow-md shadow-amber-500/20">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-bold text-slate-900 text-base mb-1">2. ثورة الاتصال والمعلوماتية</h4>
+                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                                التطور الهائل في شبكات الإعلام الآلي وتكنولوجيات الاتصال الفوري والأقمار الصناعية وشبكة الإنترنت، مما أتاح ربط البورصات العالمية في شبكة واحدة متواصلة تعمل طيلة 24 ساعة دون توقف، واستحداث أدوات مالية رقمية ونظم دفع وتحويل إلكتروني فائقة السرعة.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-white to-purple-50/50 p-6 rounded-2xl border border-purple-200/80 shadow-sm flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-purple-600 text-white flex items-center justify-center text-xl shrink-0 shadow-md shadow-purple-600/20">
+                            <i class="fa-solid fa-vault"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-bold text-slate-900 text-base mb-1">3. التطور الهيكلي للمؤسسات المالية وصناديق الاستثمار</h4>
+                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                                بروز صناديق استثمارية عملاقة (Mutual Funds)، وصناديق المعاشات والتقاعد الضخمة، إلى جانب الصناديق السيادية لدول الفوائض المالية (الخليج، النرويج، الصين)، التي تدير محافظ مالية تريليونية تسعى لتوظيفها وتوزيع مخاطرها عبر شتى أصقاع الكوكب.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-white to-emerald-50/50 p-6 rounded-2xl border border-emerald-200/80 shadow-sm flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-xl shrink-0 shadow-md shadow-emerald-600/20">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-bold text-slate-900 text-base mb-1">4. استراتيجيات الشركات عبر القطرية (FMN / STN)</h4>
+                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                                سعي الشركات متعددة الجنسيات لتدويل مسالك الإنتاج وعولمة فروعها واستغلال الامتيازات التفاضلية (اليد العاملة الرخيصة، وفرة المواد الأولية، الإعفاءات الجبائية)، حيث تستأثر هذه الشركات بالنصيب الأكبر من الاستثمارات الأجنبية المباشرة عبر عمليات الشراء والاندماج العابرة للقارات.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 2: ACTORS AND CONTROLLING CENTERS -->
+    <section id="section2" class="py-16 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Title Header -->
+            <div class="border-r-4 border-gold-500 pr-4 mb-12">
+                <span class="text-xs font-bold uppercase tracking-wider text-gold-600">العنصر الثاني في البرنامج</span>
+                <h2 class="font-heading text-2xl sm:text-4xl font-extrabold text-brand-950">2. الأطراف الفاعلة في التدفقات المالية والمراكز المتحكمة فيها</h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-1">تحديد القوى المحركة للسيولة النقدية ورسم خريطة التباين الجغرافي للهيمنة والتهميش</p>
+            </div>
+
+            <!-- Subsection 2.1: The Involved Parties / Actors -->
+            <div class="space-y-6 mb-16">
+                <h3 class="font-heading text-xl font-bold text-brand-900 flex items-center gap-2">
+                    <span class="w-8 h-8 rounded-lg bg-gold-500 text-brand-950 flex items-center justify-center text-sm font-bold">2.1</span>
+                    الأطراف المتدخلة والفاعلة في التدفقات المالية
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Actor 1 -->
+                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-sm relative group hover:bg-white hover:border-brand-500 transition">
+                        <div class="w-12 h-12 bg-blue-100 text-blue-700 rounded-xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <h4 class="font-heading font-bold text-slate-900 text-base mb-2">الشركات عبر القطرية (Multinationals)</h4>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            تعتبر <strong>المحرك الأساسي</strong> للاستثمار الأجنبي المباشر (FDI)، إذ تتحكم في شبكات إنتاج وتوزيع عابرة للحدود وتدير استثمارات بآلاف المليارات. تقوم بنقل الأصول، توطين الفروع، وتدوير الأرباح عالمياً لتحقيق أقصى ربحية ممكنة.
+                        </p>
+                    </div>
+
+                    <!-- Actor 2 -->
+                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-sm relative group hover:bg-white hover:border-brand-500 transition">
+                        <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-landmark"></i>
+                        </div>
+                        <h4 class="font-heading font-bold text-slate-900 text-base mb-2">البنوك والمصارف والمجمعات المالية الكبرى</h4>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            مؤسسات مالية وسيطة جبارة تقوم بتعبئة الادخار العالمي وتوجيه السيولة نحو الأصول الرابحة والبورصات، وتمويل صفقات الاستحواذ الكبرى وإقراض الحكومات والشركات العالمية.
+                        </p>
+                    </div>
+
+                    <!-- Actor 3 -->
+                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-sm relative group hover:bg-white hover:border-brand-500 transition">
+                        <div class="w-12 h-12 bg-indigo-100 text-indigo-700 rounded-xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-building-ngo"></i>
+                        </div>
+                        <h4 class="font-heading font-bold text-slate-900 text-base mb-2">المؤسسات المالية الدولية (بريتون وودز)</h4>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            صندوق النقد الدولي (FMI) والبنك العالمي (WB)، اللذان يتدخلان في إدارة الأزمات النقدية ومنح قروض الإنقاذ للدول المتعثرة، مع فرض برامج إصلاح هيكلي وإملاء التوجهات والسياسات الاقتصادية والمالية.
+                        </p>
+                    </div>
+
+                    <!-- Actor 4 -->
+                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-sm relative group hover:bg-white hover:border-brand-500 transition">
+                        <div class="w-12 h-12 bg-purple-100 text-purple-700 rounded-xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-flag"></i>
+                        </div>
+                        <h4 class="font-heading font-bold text-slate-900 text-base mb-2">الدول والمنظمات الحكومية والنوادي الدائنة</h4>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            تتدخل الدول من خلال تقديم المساعدة العمومية من أجل التنمية، أو عبر الصناديق السيادية والاستثمارية العملاقة، أو من خلال تكتلات ونوادي الدائنين مثل <strong>"نادي باريس"</strong> الذي يضم كبرى الدول الدائنة للتفاوض حول الديون الخارجية.
+                        </p>
+                    </div>
+
+                    <!-- Actor 5 -->
+                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-sm relative group hover:bg-white hover:border-brand-500 transition md:col-span-2 lg:col-span-2">
+                        <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h4 class="font-heading font-bold text-slate-900 text-base mb-2">المهاجرون والعمال بالخارج (Remitters)</h4>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            طرف نشط ومؤثر في ضخ ونقل الكتلة النقدية الخاصة بتحويلات العمالة المهاجرة إلى بلدانهم الأصلية في الجنوب، وهو تدفق مالي شعبي مباشر يفوق في كثير من الأحيان حجم تدفقات المساعدة العمومية للتنمية، مساهماً في استقرار العملة الوطنية وتغذية الدورة الاقتصادية المعيشية.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subsection 2.2: Controlling Centers and Disparities -->
+            <div class="space-y-6">
+                <h3 class="font-heading text-xl font-bold text-brand-900 flex items-center gap-2">
+                    <span class="w-8 h-8 rounded-lg bg-gold-500 text-brand-950 flex items-center justify-center text-sm font-bold">2.2</span>
+                    المراكز المتحكمة في التدفقات والتفاوت المجالي الحاد
+                </h3>
+
+                <!-- Comparison Cards Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    
+                    <!-- The Triad Dominance -->
+                    <div class="bg-gradient-to-br from-brand-900 to-brand-800 text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-brand-700 space-y-4">
+                        <div class="flex items-center justify-between border-b border-brand-700 pb-4">
+                            <div class="flex items-center gap-3">
+                                <span class="w-10 h-10 rounded-xl bg-gold-500 text-brand-950 flex items-center justify-center font-bold text-lg">
+                                    <i class="fa-solid fa-crown"></i>
+                                </span>
+                                <div>
+                                    <h4 class="font-heading font-bold text-lg text-white">1. هيمنة بلدان الشمال (أقطاب الثالوث)</h4>
+                                    <p class="text-xs text-brand-300">الولايات المتحدة الأمريكية، الاتحاد الأوروبي، واليابان</p>
+                                </div>
+                            </div>
+                            <span class="bg-brand-700 text-gold-400 text-xs font-bold px-3 py-1 rounded-full">+75% من الرصيد</span>
+                        </div>
+                        <p class="text-sm text-slate-200 leading-relaxed">
+                            تستأثر بلدان الشمال المتقدمة بأكثر من ثلاثة أرباع (75% أو أكثر) رصيد الاستثمارات الأجنبية المباشرة في العالم، سواء الصادرة منها (كمستثمر أول) أو الواردة إليها (كمتقبل رئيسي للرساميل بفضل استقرار أسواقها وقوتها الاستهلاكية).
+                        </p>
+                        <div class="bg-brand-950/60 p-4 rounded-xl border border-brand-700/60 space-y-2 text-xs text-slate-300">
+                            <div class="font-bold text-gold-400 mb-1 flex items-center gap-1">
+                                <i class="fa-solid fa-city"></i> كبرى البورصات والساحات المالية العالمية:
+                            </div>
+                            <p>
+                                تتركز القدرة على التحكم في المضاربات والرساميل في مثلث البورصات العالمية الكبرى التي تتحكم في نحو <strong>80%</strong> من التدفقات: <strong>وول ستريت (نيويورك)</strong>، <strong>حي السيتي (لندن)</strong>، و<strong>طوكيو</strong>، إلى جانب باريس وفرانكفورت وسويسرا.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- The New South & Africa Marginalization -->
+                    <div class="space-y-6">
+                        <!-- China & Emerging South -->
+                        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-sm hover:bg-white hover:border-emerald-500 transition">
+                            <div class="flex items-center justify-between mb-3">
+                                <h4 class="font-heading font-bold text-slate-900 text-base flex items-center gap-2">
+                                    <i class="fa-solid fa-arrow-trend-up text-emerald-600"></i>
+                                    2. بروز أقطاب جديدة (الجنوب الجديد والقوى الصاعدة)
+                                </h4>
+                                <span class="text-xs bg-emerald-100 text-emerald-800 font-bold px-2.5 py-0.5 rounded">الصين وآسيا</span>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                شهدت الخريطة المالية بروز مراكز تحكم إقليمية جديدة بقيادة <strong>الصين</strong> التي تحولت إلى قوة مالية عظمى ومستثمر عالمي أول في العديد من القارات (مبادرة الحزام والطريق)، بالإضافة إلى الدور المتنامي لـ <strong>"التنانين والنمور الآسيوية"</strong> وبورصات سنغافورة وهونغ كونغ وشنغهاي، وصناديق الثروة السيادية الخليجية.
+                            </p>
+                        </div>
+
+                        <!-- African Marginalization -->
+                        <div class="bg-rose-50/70 border border-rose-200 rounded-2xl p-6 shadow-sm">
+                            <div class="flex items-center justify-between mb-3">
+                                <h4 class="font-heading font-bold text-rose-950 text-base flex items-center gap-2">
+                                    <i class="fa-solid fa-triangle-exclamation text-rose-600"></i>
+                                    3. التهميش المالي للقارة الإفريقية
+                                </h4>
+                                <span class="text-xs bg-rose-200 text-rose-900 font-bold px-2.5 py-0.5 rounded">&lt; 1% من الاستثمارات</span>
+                            </div>
+                            <p class="text-xs sm:text-sm text-rose-900/80 leading-relaxed">
+                                في المقابل، تواصل القارة الإفريقية معاناتها من <strong>التهميش وضعف الجاذبية المالية</strong>، إذ لا يتجاوز نصيبها من إجمالي الاستثمارات العالمية نسباً ضئيلة جداً (أقل من 1% في العديد من المؤشرات)، مع تركز أغلبها في قطاع استخراج المحروقات والمعادن، لتظل حبيسة ضغوط المديونية والتبعية للمساعدات العمومية المشروطة.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION: INTERACTIVE WORLD FINANCIAL FLOW MAP -->
+    <section id="map-section" class="py-16 bg-slate-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="text-sky-400 font-bold text-sm uppercase tracking-wider bg-sky-950 border border-sky-800 px-3 py-1 rounded-full">
+                    <i class="fa-solid fa-map-location-dot ml-1"></i> تجسيد خرائطي تفاعلي
+                </span>
+                <h2 class="font-heading text-2xl sm:text-4xl font-extrabold text-white mt-3">خريطة التدفقات المالية العالمية ومراكز التحكم</h2>
+                <p class="text-slate-400 text-xs sm:text-sm mt-2">انقر على المراكز المالية والأقطاب الجغرافية للتعرف على خصائصها واتجاهات تدفق السيولة منها وإليها</p>
+            </div>
+
+            <!-- Interactive Map Container -->
+            <div class="bg-slate-950 border border-slate-800 rounded-3xl p-4 sm:p-6 shadow-2xl relative">
+                
+                <!-- SVG World Canvas -->
+                <div class="relative w-full aspect-[16/9] max-h-[550px] bg-[#090d16] rounded-2xl overflow-hidden border border-slate-800/80 flex items-center justify-center">
+                    
+                    <svg viewBox="0 0 1000 550" class="w-full h-full select-none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <!-- Linear Gradients for Flow Lines -->
+                            <linearGradient id="grad-triad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.9"/>
+                                <stop offset="100%" stop-color="#60a5fa" stop-opacity="0.9"/>
+                            </linearGradient>
+                            <linearGradient id="grad-china" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.8"/>
+                                <stop offset="100%" stop-color="#ef4444" stop-opacity="0.8"/>
+                            </linearGradient>
+                            <linearGradient id="grad-south" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#10b981" stop-opacity="0.6"/>
+                                <stop offset="100%" stop-color="#065f46" stop-opacity="0.2"/>
+                            </linearGradient>
+                        </defs>
+
+                        <!-- Stylized World Continents (Background) -->
+                        <g fill="#1e293b" stroke="#334155" stroke-width="1.2" opacity="0.65">
+                            <!-- North America -->
+                            <path d="M120,90 Q200,80 270,120 Q290,180 240,240 Q180,260 140,220 Q100,160 120,90 Z" />
+                            <!-- South America -->
+                            <path d="M250,280 Q320,300 310,380 Q280,470 230,450 Q200,380 220,300 Z" />
+                            <!-- Europe -->
+                            <path d="M460,90 Q540,80 560,130 Q530,180 470,170 Q440,140 460,90 Z" />
+                            <!-- Africa -->
+                            <path d="M460,190 Q560,190 570,280 Q540,400 480,420 Q420,320 440,220 Z" />
+                            <!-- Asia / Eurasia -->
+                            <path d="M570,90 Q780,70 850,140 Q880,240 760,260 Q650,240 580,170 Z" />
+                            <!-- Japan & East Islands -->
+                            <path d="M870,150 Q900,140 895,190 Q860,200 870,150 Z" />
+                            <!-- Australia / Oceania -->
+                            <path d="M780,350 Q880,340 870,420 Q800,450 770,390 Z" />
+                        </g>
+
+                        <!-- Dynamic Animated Financial Flow Curves -->
+                        <!-- 1. Intense Triad Inner Flow: USA <-> Europe -->
+                        <path d="M220,160 Q340,110 490,130" fill="none" stroke="url(#grad-triad)" stroke-width="6" class="flow-line" />
+                        <path d="M490,140 Q340,170 220,170" fill="none" stroke="url(#grad-triad)" stroke-width="6" class="flow-line" />
+
+                        <!-- 2. Intense Triad Flow: USA <-> Japan -->
+                        <path d="M875,170 Q550,40 220,150" fill="none" stroke="#38bdf8" stroke-width="4" stroke-dasharray="6" class="flow-line" />
+
+                        <!-- 3. Europe <-> Japan / Asia -->
+                        <path d="M510,130 Q680,90 875,170" fill="none" stroke="#38bdf8" stroke-width="4" stroke-dasharray="6" class="flow-line" />
+
+                        <!-- 4. China Outbound Flows to Africa & South America -->
+                        <path d="M760,210 Q650,290 510,290" fill="none" stroke="url(#grad-china)" stroke-width="3.5" class="flow-line" />
+                        <path d="M760,210 Q500,450 270,350" fill="none" stroke="url(#grad-china)" stroke-width="2.5" class="flow-line" />
+
+                        <!-- 5. Migrant Remittances flows: Gulf/Europe/USA -> South & Africa -->
+                        <path d="M500,160 Q490,220 480,260" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="4" class="flow-line" />
+                        <path d="M210,190 Q220,260 250,320" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="4" class="flow-line" />
+
+                        <!-- Weak Flow to Sub-Saharan Africa (Marginalization) -->
+                        <path d="M500,160 Q520,330 500,360" fill="none" stroke="#f43f5e" stroke-width="1.2" stroke-dasharray="2" opacity="0.6" />
+
+                        <!-- Financial Hub Nodes (Interactive Pulsing Points) -->
+                        
+                        <!-- Hub 1: Wall Street / New York (USA) -->
+                        <g class="cursor-pointer" onclick="showNodeInfo('usa')">
+                            <circle cx="210" cy="165" r="14" fill="#0284c7" class="pulse-node" opacity="0.4" />
+                            <circle cx="210" cy="165" r="7" fill="#38bdf8" stroke="#ffffff" stroke-width="2" />
+                            <text x="210" y="145" fill="#f8fafc" font-size="11" font-weight="bold" text-anchor="middle">نيويورك (وول ستريت)</text>
+                        </g>
+
+                        <!-- Hub 2: London / City & Europe -->
+                        <g class="cursor-pointer" onclick="showNodeInfo('europe')">
+                            <circle cx="495" cy="135" r="14" fill="#0284c7" class="pulse-node" opacity="0.4" />
+                            <circle cx="495" cy="135" r="7" fill="#38bdf8" stroke="#ffffff" stroke-width="2" />
+                            <text x="495" y="115" fill="#f8fafc" font-size="11" font-weight="bold" text-anchor="middle">لندن (السيتي) وأوروبا</text>
+                        </g>
+
+                        <!-- Hub 3: Tokyo (Japan) -->
+                        <g class="cursor-pointer" onclick="showNodeInfo('japan')">
+                            <circle cx="875" cy="170" r="14" fill="#0284c7" class="pulse-node" opacity="0.4" />
+                            <circle cx="875" cy="170" r="7" fill="#38bdf8" stroke="#ffffff" stroke-width="2" />
+                            <text x="875" y="150" fill="#f8fafc" font-size="11" font-weight="bold" text-anchor="middle">طوكيو (اليابان)</text>
+                        </g>
+
+                        <!-- Hub 4: Shanghai / Beijing (China & Emerging Asia) -->
+                        <g class="cursor-pointer" onclick="showNodeInfo('china')">
+                            <circle cx="760" cy="205" r="16" fill="#f59e0b" class="pulse-node" opacity="0.4" />
+                            <circle cx="760" cy="205" r="8" fill="#fbbf24" stroke="#ffffff" stroke-width="2" />
+                            <text x="760" y="235" fill="#fde68a" font-size="11" font-weight="bold" text-anchor="middle">الصين وأقطاب آسيا</text>
+                        </g>
+
+                        <!-- Hub 5: Gulf Sovereign Funds -->
+                        <g class="cursor-pointer" onclick="showNodeInfo('gulf')">
+                            <circle cx="600" cy="225" r="10" fill="#10b981" class="pulse-node" opacity="0.3" />
+                            <circle cx="600" cy="225" r="5" fill="#34d399" stroke="#ffffff" stroke-width="1.5" />
+                            <text x="600" y="248" fill="#a7f3d0" font-size="10" font-weight="bold" text-anchor="middle">الصناديق الخليجية</text>
+                        </g>
+
+                        <!-- Marginalized Zone: Africa -->
+                        <g class="cursor-pointer" onclick="showNodeInfo('africa')">
+                            <circle cx="500" cy="320" r="16" fill="#ef4444" stroke="#ef4444" stroke-dasharray="3" stroke-width="1.5" fill-opacity="0.1" />
+                            <circle cx="500" cy="320" r="5" fill="#f87171" />
+                            <text x="500" y="348" fill="#fca5a5" font-size="11" font-weight="bold" text-anchor="middle">إفريقيا (&lt; 1% تهميش)</text>
+                        </g>
+
+                        <!-- Region: Latin America -->
+                        <g class="cursor-pointer" onclick="showNodeInfo('latam')">
+                            <circle cx="270" cy="350" r="5" fill="#94a3b8" />
+                            <text x="270" y="375" fill="#cbd5e1" font-size="10" text-anchor="middle">أمريكا اللاتينية</text>
+                        </g>
+                    </svg>
+
+                    <!-- Map Legend Overlay -->
+                    <div class="absolute bottom-3 right-3 bg-slate-900/90 border border-slate-700/80 p-3 rounded-xl backdrop-blur-md text-[11px] space-y-1.5 shadow-lg hidden sm:block">
+                        <div class="font-bold text-slate-200 border-b border-slate-700 pb-1 mb-1">دليل مفاتيح الخريطة:</div>
+                        <div class="flex items-center gap-2"><span class="w-4 h-1 bg-sky-400 rounded"></span> تدفقات الثالوث المتبادلة الضخمة (+75%)</div>
+                        <div class="flex items-center gap-2"><span class="w-4 h-1 bg-amber-400 rounded"></span> استثمارات صاعدة من الصين وآسيا</div>
+                        <div class="flex items-center gap-2"><span class="w-4 h-1 bg-emerald-400 rounded"></span> تحويلات المهاجرين نحو الجنوب</div>
+                        <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-rose-500/20 border border-rose-500 inline-block"></span> مجالات مهمشة ومستقبلة للمساعدات</div>
+                    </div>
+                </div>
+
+                <!-- Dynamic Node Details Box -->
+                <div id="nodeInfoBox" class="mt-4 bg-slate-900 border border-slate-700 p-4 rounded-2xl transition-all duration-300">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-info text-sky-400"></i>
+                            <h4 id="nodeTitle" class="font-heading font-bold text-white text-base">انقر على أحد المراكز بالخريطة أعلاه لإظهار التحليل الجغرافي</h4>
+                        </div>
+                        <span id="nodeBadge" class="text-xs bg-brand-800 text-brand-200 px-2.5 py-0.5 rounded font-bold">بيانات تفاعلية</span>
+                    </div>
+                    <p id="nodeDesc" class="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed">
+                        توضح الخريطة تركز تدفقات رؤوس الأموال والاستثمارات داخل مثلث الثالوث التقليدي، في حين تعاني القارة الإفريقية من ضعف الجذب المالي وشدة التبعية للقروض والمساعدات.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: CHARTS AND STATISTICAL DISPARITIES -->
+    <section id="charts-section" class="py-16 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-600 font-bold text-sm bg-brand-50 px-3 py-1 rounded-full border border-brand-200">
+                    <i class="fa-solid fa-chart-pie ml-1"></i> التحليل الإحصائي والبياني
+                </span>
+                <h2 class="font-heading text-2xl sm:text-4xl font-extrabold text-brand-950 mt-3">الرسوم البيانية التفسيرية للتدفقات والتفاوت المجالي</h2>
+                <p class="text-slate-600 text-sm mt-2">رسوم بيانية تفاعلية تدعم قدرة التلميذ على استقراء المعطيات الكمية ومقارنتها</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <!-- Chart 1: Growth by Type -->
+                <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+                        <div>
+                            <h3 class="font-heading font-bold text-brand-900 text-lg">تطور حجم التدفقات المالية حسب الأصناف</h3>
+                            <p class="text-xs text-slate-500">مقارنة نمو مختلف التدفقات (بمليارات الدولارات)</p>
+                        </div>
+                        <span class="w-9 h-9 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center"><i class="fa-solid fa-chart-column"></i></span>
+                    </div>
+                    <div class="relative h-72 w-full">
+                        <canvas id="flowsGrowthChart"></canvas>
+                    </div>
+                    <div class="mt-4 p-3 bg-slate-50 rounded-xl text-xs text-slate-600 leading-relaxed border border-slate-200/60">
+                        <strong class="text-brand-800">ملاحظة جغرافية:</strong> يبرز الرسم الارتفاع الصاروخي لرصيد الاستثمارات الأجنبية المباشرة وتدفقات الأسواق المالية مقابل التواضع الشديد للمساعدة العمومية للتنمية، وتعاظم وزن تحويلات المهاجرين كرافد تمويلي ثابت.
+                    </div>
+                </div>
+
+                <!-- Chart 2: Regional Disparity in Flow Control -->
+                <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+                        <div>
+                            <h3 class="font-heading font-bold text-brand-900 text-lg">التفاوت المجالي في التحكم في التدفقات المالية</h3>
+                            <p class="text-xs text-slate-500">توزيع حصص الأقطاب الجغرافية من الاستثمارات والسيولة العالمية (%)</p>
+                        </div>
+                        <span class="w-9 h-9 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center"><i class="fa-solid fa-pie-chart"></i></span>
+                    </div>
+                    <div class="relative h-72 w-full flex items-center justify-center">
+                        <canvas id="disparityChart"></canvas>
+                    </div>
+                    <div class="mt-4 p-3 bg-slate-50 rounded-xl text-xs text-slate-600 leading-relaxed border border-slate-200/60">
+                        <strong class="text-brand-800">استنتاج تركيبي:</strong> احتكار دول الثالوث لأكثر من 75% من رصيد الاستثمارات العالمية، وتنامي نصيب الصين وأقطاب آسيا الناشئة (17%)، مقابل التهميش الشديد لإفريقيا التي تقل حصتها عن 1%.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: INTERACTIVE QUIZ & SELF-EVALUATION -->
+    <section id="quiz" class="py-16 bg-white border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-brand-900 to-slate-900 text-white rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-8 opacity-10 text-9xl font-black font-heading select-none pointer-events-none">BAC</div>
+                
+                <div class="relative z-10 space-y-6">
+                    <div class="flex items-center justify-between">
+                        <span class="bg-gold-500 text-brand-950 text-xs font-black px-3 py-1 rounded-full uppercase">
+                            <i class="fa-solid fa-graduation-cap ml-1"></i> التقييم التكويني الذاتي
+                        </span>
+                        <span id="quizCounter" class="text-xs text-slate-300">سؤال 1 من 4</span>
+                    </div>
+
+                    <h2 class="font-heading text-2xl font-bold text-white">اختبر مكتسباتك المعرفية والمنهجية</h2>
+                    <p class="text-slate-300 text-xs sm:text-sm">أسئلة تطبيقية تحاكي اختبارات الباكالوريا في مادة الجغرافيا</p>
+
+                    <!-- Question Container -->
+                    <div id="quizCard" class="bg-white/10 backdrop-blur-md rounded-2xl p-5 sm:p-6 border border-white/20 space-y-4">
+                        <h4 id="questionText" class="font-heading font-bold text-base sm:text-lg text-gold-200 leading-snug">
+                            ما هو الفرق الجوهري بين الاستثمار الأجنبي المباشر (FDI) والاستثمارات غير المباشرة في المحافظ المالية؟
+                        </h4>
+
+                        <div id="optionsContainer" class="space-y-2.5">
+                            <!-- Options injected dynamically by JS -->
+                        </div>
+                    </div>
+
+                    <div id="quizFeedback" class="hidden p-4 rounded-xl text-sm font-medium"></div>
+
+                    <div class="flex justify-between items-center pt-2">
+                        <button id="nextQuestionBtn" onclick="nextQuestion()" class="hidden bg-gold-500 hover:bg-gold-400 text-brand-950 font-bold px-6 py-2.5 rounded-xl transition shadow">
+                            السؤال التالي <i class="fa-solid fa-angle-left mr-1"></i>
+                        </button>
+                        <div id="scoreDisplay" class="text-sm font-bold text-slate-300">النتيجة: <span id="currentScore">0</span> / 4</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: LESSON SYNTHESIS & CONCLUSION -->
+    <section class="py-16 bg-slate-100">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-6">
+                <div class="flex items-center gap-3">
+                    <span class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center text-2xl font-bold">
+                        <i class="fa-solid fa-flag-checkered"></i>
+                    </span>
+                    <div>
+                        <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider">تأليف عام وخلاصة الدرس</span>
+                        <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-brand-950">خاتمة استنتاجية</h2>
+                    </div>
+                </div>
+
+                <div class="text-slate-700 text-sm sm:text-base leading-relaxed space-y-4 text-justify border-t border-slate-100 pt-6">
+                    <p>
+                        ختاماً، تجسد <strong>التدفقات المالية العالمية</strong> الوجه الأكثر ديناميكية وعولمة للاقتصاد المعاصر، حيث أفرز التحرير المالي والثورة الرقمية انفجاراً غير مسبوق في حركة رؤوس الأموال وهيمنة الاقتصاد الافتراضي المضاربي على الاقتصاد السلعي الحقيقي.
+                    </p>
+                    <p>
+                        غير أن هذه العولمة المالية تعكس في جوهرها <strong>نظاماً جغرافياً غير متكافئ وشديد التفاوت</strong>؛ فبينما تحكم دول الثالوث (الولايات المتحدة، الاتحاد الأوروبي، واليابان) وبورصاتها الكبرى قبضتها على أكثر من ثلاثة أرباع الاستثمارات والمضاربات مدعومة بصعود مالي ملحوظ لقوى الجنوب الناشئة كالصين، تظل القارة الإفريقية والبلدان الأكثر فقراً على هامش هذه التدفقات، رهينة المديونية وتبعية المساعدات العمومية المشروطة.
+                    </p>
+                </div>
+
+                <!-- Pedagogical Summary Points Box -->
+                <div class="bg-brand-50 border border-brand-200 rounded-2xl p-5 grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm text-brand-900 font-semibold">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-check-double text-brand-600 text-lg"></i>
+                        <span>انفجار مالي وهيمنة المضاربات الافتراضية.</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-check-double text-brand-600 text-lg"></i>
+                        <span>احتكار أقطاب الثالوث للمراكز والبورصات الكبرى.</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-check-double text-brand-600 text-lg"></i>
+                        <span>صعود الصين وتهميش إفريقي متواصل (&lt; 1%).</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-950 text-slate-400 text-xs sm:text-sm py-12 border-t border-brand-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-2 space-y-3">
+                    <div class="flex items-center gap-2 text-white font-heading font-extrabold text-lg">
+                        <i class="fa-solid fa-money-bill-transfer text-gold-400"></i>
+                        <span>درس التدفقات المالية في العالم | 4 آداب</span>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed max-w-md">
+                        مادة الجغرافيا - السنة الرابعة من التعليم الثانوي (شعبة الآداب) بالجمهورية التونسية. تم إعداد هذا العمل التفاعلي طبقاً للبرامج الرسمية والتوجيهات البيداغوجية الصادرة عن وزارة التربية التونسية للسنة الدراسية 2026 / 2027.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold font-heading mb-3">عناصر الدرس</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#section1" class="hover:text-white transition">أنواع التدفقات المالية ومظاهرها</a></li>
+                        <li><a href="#section1" class="hover:text-white transition">عوامل الانفجار المالي العالمي</a></li>
+                        <li><a href="#section2" class="hover:text-white transition">الأطراف الفاعلة والمؤسسات الدولية</a></li>
+                        <li><a href="#section2" class="hover:text-white transition">هيمنة الثالوث والتهميش الإفريقي</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold font-heading mb-3">بيانات الأستاذ المؤطر</h4>
+                    <div class="space-y-2 text-xs text-slate-300">
+                        <p class="font-bold text-gold-400"><i class="fa-solid fa-chalkboard-user ml-1"></i> الأستاذ: رياض السليمي</p>
+                        <p><i class="fa-solid fa-landmark ml-1"></i> أستاذ التاريخ والجغرافيا</p>
+                        <p><i class="fa-solid fa-school ml-1"></i> المعاهد الثانوية التونسية</p>
+                        <p><i class="fa-regular fa-calendar ml-1"></i> السنة الدراسية: 2026 - 2027</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-brand-900 pt-6 flex flex-wrap justify-between items-center gap-4 text-xs text-slate-500">
+                <div>جميع الحقوق البيداغوجية والتربوية محفوظة © 2026/2027 • المعاهد الثانوية التونسية</div>
+                <div class="flex items-center gap-3">
+                    <span>مصمم وفق المنظومة التعليمية الرقمية التونسية الحديثة</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactive Logic -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Map Node Details Data
+        const nodeData = {
+            usa: {
+                title: 'قطب أمريكا الشمالية: بورصة وول ستريت (نيويورك)',
+                badge: 'القطب المالي الأول عالمياً',
+                desc: 'تعتبر وول ستريت في نيويورك عاصمة المال العالمية، حيث تصدر وتستقطب أضخم الاستثمارات الأجنبية المباشرة وتتحكم في تداولات الدولار وأسهم كبرى الشركات التكنولوجية والصناعية العالمية.'
+            },
+            europe: {
+                title: 'القطب الأوروبي: حي السيتي (لندن)، باريس وفرانكفورت',
+                badge: 'مركز الصرف والوساطة المالية',
+                desc: 'يعد حي السيتي في لندن المركز الأول عالمياً لتداول العملات الأجنبية (سوق الصرف)، ويستحوذ الاتحاد الأوروبي مع الولايات المتحدة على النصيب الأكبر من تدفقات الاستثمار المتبادل.'
+            },
+            japan: {
+                title: 'القطب الآسيوي للثالوث: بورصة طوكيو (اليابان)',
+                badge: 'عملاق التمويل والادخار',
+                desc: 'بورصة طوكيو ومصارف اليابان الكبرى تلعب دوراً محورياً في تمويل المشاريع وتصدير رؤوس الأموال والاستثمارات الصناعية في شتى أنحاء العالم.'
+            },
+            china: {
+                title: 'الصين وأقطاب آسيا الناشئة (شنغهاي، هونغ كونغ، سنغافورة)',
+                badge: 'الجنوب الجديد والقوة الصاعدة',
+                desc: 'تحولت الصين إلى عملاق مالي عالمي ومصدر أول للاستثمارات المباشرة في إفريقيا وآسيا وأمريكا اللاتينية عبر مبادرة الحزام والطريق، إلى جانب قوة بورصتي شنغهاي وهونغ كونغ.'
+            },
+            gulf: {
+                title: 'صناديق الثروة السيادية لدول الخليج العربي',
+                badge: 'فوائض مالية تريليونية',
+                desc: 'تدير الصناديق السيادية (مثل صناديق الإمارات، السعودية، قطر، والكويت) مئات المليارات الناتجة عن مداخيل المحروقات، موجهة استثماراتها نحو كبرى الشركات والعقارات والبنوك في العالم.'
+            },
+            africa: {
+                title: 'القارة الإفريقية: مجال مالي مهمش',
+                badge: 'أقل من 1% من الاستثمارات',
+                desc: 'تعاني إفريقيا من ضعف الاستقطاب المالي وتتركز الاستثمارات الضئيلة الواردة إليها في قطاعات استخراج النفط والمناجم، مع معاناتها المزمنة من أعباء خدمة الديون والتبعية للمساعدات.'
+            },
+            latam: {
+                title: 'أمريكا اللاتينية والأسواق الصاعدة (البرازيل، المكسيك)',
+                badge: 'مجال استقطاب متوسط',
+                desc: 'تستقطب قطاعات الصناعات المعملية والخدمات والمناجم، وتعتمد دول مثل المكسيك بشكل حيوي على تحويلات المهاجرين من الولايات المتحدة الأمريكية.'
+            }
+        };
+
+        function showNodeInfo(key) {
+            const data = nodeData[key];
+            if (!data) return;
+            const titleEl = document.getElementById('nodeTitle');
+            const badgeEl = document.getElementById('nodeBadge');
+            const descEl = document.getElementById('nodeDesc');
+            const box = document.getElementById('nodeInfoBox');
+
+            box.classList.add('scale-[0.99]');
+            setTimeout(() => {
+                titleEl.textContent = data.title;
+                badgeEl.textContent = data.badge;
+                descEl.textContent = data.desc;
+                box.classList.remove('scale-[0.99]');
+            }, 100);
+        }
+
+        // Initialize Chart.js Graphs
+        window.addEventListener('DOMContentLoaded', () => {
+            // Chart 1: Evolution of Financial Flows by Type
+            const ctx1 = document.getElementById('flowsGrowthChart').getContext('2d');
+            new Chart(ctx1, {
+                type: 'bar',
+                data: {
+                    labels: ['1990', '2000', '2010', '2020', '2026 (تقديري)'],
+                    datasets: [
+                        {
+                            label: 'رصيد الاستثمار الأجنبي المباشر (FDI)',
+                            data: [2100, 7500, 20400, 38000, 41500],
+                            backgroundColor: '#0284c7',
+                            borderRadius: 6
+                        },
+                        {
+                            label: 'تحويلات المهاجرين للبلدان النامية',
+                            data: [35, 130, 340, 560, 680],
+                            backgroundColor: '#10b981',
+                            borderRadius: 6
+                        },
+                        {
+                            label: 'المساعدة العمومية للتنمية (APD)',
+                            data: [55, 70, 128, 160, 185],
+                            backgroundColor: '#f59e0b',
+                            borderRadius: 6
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { font: { family: 'Tajawal', size: 11 } }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: (context) => ` ${context.dataset.label}: ${context.raw.toLocaleString()} مليار دولار`
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: '#f1f5f9' },
+                            ticks: {
+                                callback: (val) => val + ' B$',
+                                font: { family: 'Cairo', size: 10 }
+                            }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { font: { family: 'Cairo', size: 11 } }
+                        }
+                    }
+                }
+            });
+
+            // Chart 2: Regional Disparity Doughnut Chart
+            const ctx2 = document.getElementById('disparityChart').getContext('2d');
+            new Chart(ctx2, {
+                type: 'doughnut',
+                data: {
+                    labels: [
+                        'دول الثالوث (أمريكا، أوروبا، اليابان)',
+                        'الصين وأقطاب آسيا الصاعدة',
+                        'بقية دول الجنوب وأمريكا اللاتينية',
+                        'القارة الإفريقية (المجال المهمش)'
+                    ],
+                    datasets: [{
+                        data: [75.5, 17.2, 6.4, 0.9],
+                        backgroundColor: [
+                            '#0369a1', // Triad
+                            '#f59e0b', // China/Asia
+                            '#10b981', // Rest of South
+                            '#ef4444'  // Africa
+                        ],
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { font: { family: 'Tajawal', size: 11 } }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: (context) => ` ${context.label}: ${context.raw}% من إجمالي الرصيد`
+                            }
+                        }
+                    },
+                    cutout: '62%'
+                }
+            });
+
+            // Load First Quiz Question
+            loadQuestion();
+        });
+
+        // Quiz Logic
+        const quizQuestions = [
+            {
+                question: 'ما هو الفرق الجوهري بين الاستثمار الأجنبي المباشر (FDI) والاستثمارات غير المباشرة في المحافظ المالية؟',
+                options: [
+                    'الاستثمار المباشر يهدف لإدارة ومراقبة الوحدات الإنتاجية على المدى الطويل، بينما غير المباشر مضاربي سريع لجني أرباح الأسهم.',
+                    'الاستثمار المباشر يقتصر على المنظمات الخيرية، والاستثمار غير المباشر تديره البنوك فقط.',
+                    'الاستثمار المباشر لا يتطلب أي رأس مال، بينما غير المباشر يتطلب موافقة صندوق النقد الدولي.',
+                    'لا يوجد أي فرق بينهما فكلاهما هبات لا ترد.'
+                ],
+                correct: 0,
+                explanation: 'صحيح! الاستثمار الأجنبي المباشر يستهدف تملك أصول وإدارتها لخلق قيمة مضافة مستمرة، بينما الاستثمار في المحافظ هو مضاربات بورصية سريعة الحركة.'
+            },
+            {
+                question: 'كم يبلغ تقريباً رصيد الاستثمارات الأجنبية المباشرة في العالم حسب أحدث المؤشرات؟',
+                options: [
+                    'أقل من 500 مليار دولار.',
+                    'حوالي 5 تريليونات دولار.',
+                    'أكثر من 41,000 مليار دولار (41 تريليون دولار).',
+                    '100 مليار دولار فقط.'
+                ],
+                correct: 2,
+                explanation: 'ممتاز! تجاوز رصيد الاستثمار الأجنبي المباشر التراكمي في العالم حاجز 41 ألف مليار دولار، مما يبرز الانفجار المالي للعولمة.'
+            },
+            {
+                question: 'ما هي النسبة التقريبية التي تستأثر بها دول الثالوث (الولايات المتحدة، الاتحاد الأوروبي، اليابان) من رصيد الاستثمارات العالمية؟',
+                options: [
+                    'أقل من 20%.',
+                    'حوالي 50%.',
+                    'أكثر من ثلاثة أرباع الرصيد (75% فأكثر).',
+                    '10% فقط.'
+                ],
+                correct: 2,
+                explanation: 'إجابة صحيحة! يستحوذ الثالوث على أكثر من 75% من رصيد الاستثمارات العالمية تدفقاً واستقطاباً.'
+            },
+            {
+                question: 'ما هو الوضع الجغرافي والمالي للقارة الإفريقية في خريطة التدفقات العالمية؟',
+                options: [
+                    'تعتبر القطب الأول الجاذب للاستثمارات التكنولوجية.',
+                    'تعاني من التهميش وضعف الاستقطاب بنسبة تقل عن 1% مع تبعية لقروض المديونية والمساعدات.',
+                    'تستحوذ على 80% من تداولات بورصات العالم.',
+                    'لا تتلقى أي تحويلات مالية من المهاجرين إطلاقاً.'
+                ],
+                correct: 1,
+                explanation: 'أحسنت! إفريقيا تعاني من تهميش مالي هيكلي حيث لا يتجاوز نصيبها 1% وتقتصر الاستثمارات على قطاع المحروقات والمناجم.'
+            }
+        ];
+
+        let currentQuestionIdx = 0;
+        let score = 0;
+        let answered = false;
+
+        function loadQuestion() {
+            answered = false;
+            const q = quizQuestions[currentQuestionIdx];
+            document.getElementById('questionText').textContent = q.question;
+            document.getElementById('quizCounter').textContent = `سؤال ${currentQuestionIdx + 1} من ${quizQuestions.length}`;
+            
+            const optionsContainer = document.getElementById('optionsContainer');
+            optionsContainer.innerHTML = '';
+
+            const feedback = document.getElementById('quizFeedback');
+            feedback.className = 'hidden p-4 rounded-xl text-sm font-medium';
+            feedback.innerHTML = '';
+            
+            document.getElementById('nextQuestionBtn').classList.add('hidden');
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'w-full text-right p-3.5 rounded-xl bg-white/5 hover:bg-white/15 border border-white/10 text-white text-xs sm:text-sm font-medium transition flex items-center justify-between group';
+                btn.innerHTML = `
+                    <span class="flex items-center gap-2">
+                        <span class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold">${idx + 1}</span>
+                        ${opt}
+                    </span>
+                    <i class="fa-regular fa-circle text-slate-400 group-hover:text-gold-400"></i>
+                `;
+                btn.onclick = () => selectAnswer(idx, btn);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function selectAnswer(selectedIdx, btnElement) {
+            if (answered) return;
+            answered = true;
+            const q = quizQuestions[currentQuestionIdx];
+            const feedback = document.getElementById('quizFeedback');
+            const options = document.getElementById('optionsContainer').children;
+
+            if (selectedIdx === q.correct) {
+                score++;
+                document.getElementById('currentScore').textContent = score;
+                btnElement.classList.remove('bg-white/5');
+                btnElement.classList.add('bg-emerald-600', 'border-emerald-400', 'text-white');
+                feedback.className = 'p-4 rounded-xl text-xs sm:text-sm bg-emerald-950/80 border border-emerald-500 text-emerald-200 block';
+                feedback.innerHTML = `<i class="fa-solid fa-circle-check ml-1 text-emerald-400"></i> ${q.explanation}`;
+            } else {
+                btnElement.classList.remove('bg-white/5');
+                btnElement.classList.add('bg-rose-700', 'border-rose-400', 'text-white');
+                // Highlight correct
+                options[q.correct].classList.remove('bg-white/5');
+                options[q.correct].classList.add('bg-emerald-700/80', 'border-emerald-400', 'text-white');
+                feedback.className = 'p-4 rounded-xl text-xs sm:text-sm bg-rose-950/80 border border-rose-500 text-rose-200 block';
+                feedback.innerHTML = `<i class="fa-solid fa-circle-xmark ml-1 text-rose-400"></i> إجابة غير دقيقة. ${q.explanation}`;
+            }
+
+            document.getElementById('nextQuestionBtn').classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentQuestionIdx++;
+            if (currentQuestionIdx < quizQuestions.length) {
+                loadQuestion();
+            } else {
+                // Quiz completed
+                const quizCard = document.getElementById('quizCard');
+                quizCard.innerHTML = `
+                    <div class="text-center py-8 space-y-4">
+                        <div class="w-20 h-20 mx-auto rounded-full bg-gold-500 text-brand-950 flex items-center justify-center text-4xl shadow-lg">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-white">أحسنت! أتممت التقييم الذاتي بنجاح</h3>
+                        <p class="text-slate-300 text-sm">نتيجتك النهائية: <strong class="text-gold-400 text-lg">${score} من ${quizQuestions.length}</strong></p>
+                        <p class="text-xs text-slate-400 max-w-md mx-auto">واصل مراجعة محاور الجغرافيا للسنة الرابعة آداب استعداداً للباكالوريا 2026/2027.</p>
+                        <button onclick="restartQuiz()" class="bg-brand-500 hover:bg-brand-600 text-white text-xs font-bold px-6 py-2.5 rounded-xl transition">
+                            <i class="fa-solid fa-rotate-right ml-1"></i> إعادة الاختبار
+                        </button>
+                    </div>
+                `;
+                document.getElementById('nextQuestionBtn').classList.add('hidden');
+            }
+        }
+
+        function restartQuiz() {
+            currentQuestionIdx = 0;
+            score = 0;
+            document.getElementById('currentScore').textContent = '0';
+            // restore container HTML
+            document.getElementById('quizCard').innerHTML = `
+                <h4 id="questionText" class="font-heading font-bold text-base sm:text-lg text-gold-200 leading-snug"></h4>
+                <div id="optionsContainer" class="space-y-2.5"></div>
+            `;
+            loadQuestion();
+        }
+    </script>
+</body>
+  </html>
